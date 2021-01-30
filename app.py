@@ -4,7 +4,6 @@ from pathlib import Path
 from flask_pymongo import PyMongo
 import os
 from json import dumps
-import dns
 env_path=Path('.')/'.env'
 load_dotenv(dotenv_path=env_path)
 
