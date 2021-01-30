@@ -9,9 +9,9 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand">Navbar</a>
+          <a class="navbar-brand">LibAlert</a>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search for libraries" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -23,16 +23,28 @@
         <p>Showing results for {{name}}</p>
       </div>
       <div>
-        {% for item in result_list %}
-        <ul class="list-group list-group-horizontal">
-        {% for key,value in item.items() %}
-        {% if key != "_id" %}
-            <li class="list-group-item">{{value}}</li>
-        {% endif %}
-        {% endfor %}
-        </ul>
-        {% endfor %}
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Library Name</th>
+              <th scope="col">Version</th>
+              <th scope="col">Support added</th>
+              <th scope="col">Support dropped/depreciated</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in result_list %}
+            <tr>  
+              {% for key,value in item.items() %}
+                {% if key != "_id" %}
+                  <td>{{value}}</td>
+                {% endif %}
+              {% endfor %}  
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
       </div>
       {% endblock %}
-</body>
+    </body>
 </html>
