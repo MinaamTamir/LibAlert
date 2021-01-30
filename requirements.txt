@@ -2,3 +2,4 @@ flask
 python-dotenv
 pathlib
 flask_pymongo
+dnspython
