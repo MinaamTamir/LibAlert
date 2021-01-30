@@ -25,7 +25,7 @@ def result_func():
     result_list = []
     for item in result:
         result_list.append(item)
-    print(result_list)
+    #print(result_list)
     return render_template("result.html",name=name,result_list=result_list)
 @app.route('/addonlyforadmin',methods=["POST","GET"])
 def add():
